@@ -1,10 +1,10 @@
-package vk.gRPC;
+package vk.grpc;
 
 /**
  * Hello world!
  *
  */
-public class App 
+public class Application
 {
     public static void main( String[] args )
     {
