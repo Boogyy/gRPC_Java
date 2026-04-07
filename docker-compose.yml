@@ -1,0 +1,15 @@
+version: "3.9"
+
+services:
+  tarantool:
+    image: tarantool/tarantool:3.2
+    container_name: kv-tarantool
+    ports:
+      - "3303:3303"
+    volumes:
+      - ./tarantool/init.lua:/opt/tarantool/init.lua
+      - tarantool_data:/var/lib/tarantool
+    command: tarantool /opt/tarantool/init.lua
+
+volumes:
+  tarantool_data:

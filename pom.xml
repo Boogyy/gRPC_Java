@@ -20,7 +20,6 @@
     <protoc.version>${protobuf.java.version}</protoc.version>
     <protobuf.maven.plugin.version>5.1.2</protobuf.maven.plugin.version>
     <junit.jupiter.version>5.11.0</junit.jupiter.version>
-    <netty.version>4.1.132.Final</netty.version>
     <jackson.version>2.18.6</jackson.version>
   </properties>
 
@@ -30,14 +29,6 @@
         <groupId>io.grpc</groupId>
         <artifactId>grpc-bom</artifactId>
         <version>${grpc.version}</version>
-        <type>pom</type>
-        <scope>import</scope>
-      </dependency>
-
-      <dependency>
-        <groupId>io.netty</groupId>
-        <artifactId>netty-bom</artifactId>
-        <version>${netty.version}</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
@@ -138,8 +129,17 @@
       </plugin>
 
       <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>exec-maven-plugin</artifactId>
+        <version>3.5.0</version>
+      </plugin>
+
+      <plugin>
         <artifactId>maven-compiler-plugin</artifactId>
         <version>3.13.0</version>
+        <configuration>
+          <release>17</release>
+        </configuration>
       </plugin>
 
       <plugin>
